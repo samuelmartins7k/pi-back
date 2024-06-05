@@ -1,0 +1,19 @@
+{
+  "name": "p.iback",
+  "version": "1.0.0",
+  "description": "Projeto de p.i backend node js todo list",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "Eriton Soares",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongodb": "^6.6.2",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.0"
+  }
+}
