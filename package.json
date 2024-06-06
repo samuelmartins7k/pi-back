@@ -7,9 +7,10 @@
     "start": "node index",
     "dev": "nodemon index"
   },
-  "author": "Eriton Soares",
+  "author": "Eriton Soares, Samuel Martins",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mongodb": "^6.6.2",

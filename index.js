@@ -10,7 +10,7 @@ const port = 3000;
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.unsubscribe(express.urlencoded());
-app.use(routes);
+app.use("/tarefas", routes);
 
 app.listen(port, () => {
   console.log(`servidor rodando em http://localhost:${port}`);

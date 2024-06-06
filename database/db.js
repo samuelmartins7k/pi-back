@@ -1,9 +1,11 @@
+require ("dotenv").config()
 const mongoose = require(`mongoose`);
 
 const connectToDb = () => {
+
   mongoose
     .connect(
-      "mongodb+srv://root:admin@todolist.bmz6pqr.mongodb.net/?retryWrites=true&w=majority&appName=todolist",
+      process.env.MONGODB_URL,
       {
         useNewUrlParser: true,
         UseUnifiedTopology: true,
