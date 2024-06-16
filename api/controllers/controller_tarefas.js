@@ -16,7 +16,7 @@ async function criar(req, res) {
   res.status(201).json(tarefa);
 }
 
-async function obterTodas(req, res) {
+async function obterTodas(req, res) { 
   const tarefas = await Tarefa.find({});
   res.json(tarefas);
 }
