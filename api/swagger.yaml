@@ -9,7 +9,7 @@ paths:
       summary: Lista todas as tarefas
       responses:
         '200':
-          description: Sucesso
+          description: Sucesso 
           content:
             application/json:
               schema:
