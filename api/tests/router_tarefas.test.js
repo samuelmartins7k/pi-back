@@ -56,7 +56,7 @@ describe("API Todo List", () => {
   test("Deve retornar 422 e um JSON no PUT /tarefas", async () => {
     const response = await request.put(`/tarefas/${id}`).send({});
     expect(response.status).toBe(422 );
-    expect(response.type).toBe("application/json");
+    expect(response.type).toBe("application/json"); 
   });
 
   test("Deve retornar 204 e sem corpo no DELETE /tarefas/id", async () => {
