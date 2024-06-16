@@ -16,7 +16,7 @@ router.put(
   "/:id",
   controllerTarefas.buscarPeloId,
   controllerTarefas.validarDados,
-  controllerTarefas.atualizar
+  controllerTarefas.atualizar 
 );
 
 router.delete("/:id", 
