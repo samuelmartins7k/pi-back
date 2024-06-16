@@ -7,5 +7,5 @@ const tarefaSchema = new mongoose.Schema({
   dataVencimento: { type: Date }
 });
 
-module.exports = mongoose.model("Tarefa", tarefaSchema); 
+module.exports = mongoose.model("Tarefa", tarefaSchema);  
  
