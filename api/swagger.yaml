@@ -1,0 +1,103 @@
+openapi: 3.0.0
+info:
+  title: API de Lista de Tarefas
+  description: API para gerenciar uma lista de tarefas.
+  version: 1.0.0
+paths:
+  /tarefas:
+    get:
+      summary: Lista todas as tarefas
+      responses:
+        '200':
+          description: Sucesso 
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tarefa'
+    post:
+      summary: Cria uma nova tarefa
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tarefa'
+      responses:
+        '201':
+          description: Criado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tarefa'
+  /tarefas/{id}:
+    get:
+      summary: Obtém uma tarefa pelo ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tarefa'
+        '404':
+          description: Tarefa não encontrada
+    put:
+      summary: Atualiza uma tarefa pelo ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tarefa'
+      responses:
+        '200':
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tarefa'
+        '404':
+          description: Tarefa não encontrada
+    delete:
+      summary: Exclui uma tarefa pelo ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Tarefa não encontrada
+components:
+  schemas:
+    Tarefa:
+      type: object
+      properties:
+        id:
+          type: string
+        titulo:
+          type: string
+        descricao:
+          type: string
+        concluida:
+          type: boolean
+        dataVencimento:
+          type: string
+          format: date
