@@ -7,6 +7,7 @@ var logger = require('morgan');
 const routerApidocs = require('./routes/router_apidocs');
 const routerTarefas = require('./routes/router_tarefas');
 
+const userRoutes = require('./routes/userRoutes');
 mongoose.connect(process.env.MONGODB_URL);
 
 var app = express();
@@ -18,5 +19,6 @@ app.use(cookieParser());
 
 app.use('/api-docs', routerApidocs);
 app.use('/tarefas', routerTarefas);
+app.use('/api/users', userRoutes);
 
 module.exports = app;
