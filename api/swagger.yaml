@@ -6,6 +6,8 @@ info:
 paths:
   /tarefas:
     get:
+      security:
+        - JWTAuth: []
       summary: Lista todas as tarefas
       responses:
         '200':
@@ -33,6 +35,8 @@ paths:
                 $ref: '#/components/schemas/Tarefa'
   /tarefas/{id}:
     get:
+      security:
+        - JWTAuth: []
       summary: Obtém uma tarefa pelo ID
       parameters:
         - name: id
@@ -86,6 +90,11 @@ paths:
         '404':
           description: Tarefa não encontrada
 components:
+  securitySchemes:
+    JWTAuth:
+      type: apiKey
+      in: header
+      name: Authorization
   schemas:
     Tarefa:
       type: object
